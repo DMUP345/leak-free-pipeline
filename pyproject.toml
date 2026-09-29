@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline-agnostico"
+version = "0.1.0"
+description = "Pipeline de modelado para problemas de entidades y eventos"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "joblib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "matplotlib"]
+
+# where = ["src"]  ->  src/ es la raiz de codigo, NO un paquete. Asi `nucleo` y `casos`
+# quedan importables desde cualquier sitio tras un `pip install -e .`, sin parches de
+# sys.path en cada archivo. corrida_mono.py, generar_datos.py y figuras.py se quedan
+# fuera del paquete a proposito: son scripts, no biblioteca.
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["nucleo*", "casos*"]

@@ -1,0 +1,19 @@
+# datos: se descargan de Kaggle o se generan, no se versionan (2,5 GB)
+src/datasets/
+datos_ejemplo/
+
+# modelos entrenados
+*.joblib
+
+# entorno
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# editores
+.idea/
+.vscode/

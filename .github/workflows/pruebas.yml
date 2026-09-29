@@ -1,0 +1,37 @@
+name: pruebas
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Instalar
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Pruebas
+        run: pytest -q
+
+      # los dos casos sintéticos se generan solos: no hacen falta datos de Kaggle,
+      # así que el CI comprueba el pipeline de punta a punta, no solo las funciones puras
+      - name: Caso sintético de punta a punta
+        run: |
+          python src/generar_datos.py
+          python src/casos/quincena.py
+          python src/casos/sintetico.py

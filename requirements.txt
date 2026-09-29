@@ -1,0 +1,13 @@
+pandas==3.0.6
+numpy==2.5.3
+scikit-learn==1.9.1
+joblib==1.6.0
+
+# corrida_mono.py usa display() de IPython; el resto del proyecto no lo necesita
+ipython==9.17.1
+
+# solo para correr las pruebas: python -m pytest -q
+pytest==9.1.1
+
+# solo para regenerar las figuras del README: python src/figuras.py
+matplotlib==3.11.2

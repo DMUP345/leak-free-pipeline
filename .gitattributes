@@ -1,0 +1,9 @@
+# Normaliza los finales de linea a LF en el repositorio, sin importar el sistema
+# donde se edite. El CI corre en Linux y el repositorio se escribio en Windows.
+* text=auto eol=lf
+
+# Los notebooks son JSON: texto, pero con diffs enormes. Se versionan igual porque
+# las salidas incrustadas son la mitad de su valor: se leen en GitHub sin ejecutar.
+*.ipynb text eol=lf
+
+*.png binary
