@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pipeline-agnostico"
 version = "0.1.0"
 description = "Pipeline de modelado para problemas de entidades y eventos"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "pandas",
     "numpy",

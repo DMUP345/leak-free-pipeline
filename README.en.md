@@ -377,9 +377,10 @@ date, and not for survival-style targets. The case is complete and runnable in
 python -m pytest -q          # 23 tests, ~1 s
 ```
 
-CI runs them on Python 3.11 and 3.13 on every push, and also runs **both synthetic cases
-end to end**: since they generate their own data, no Kaggle download is needed, so what gets
-verified is the full pipeline and not just the pure functions.
+CI runs them on every push against Python 3.12 and 3.14, the project's real floor and the
+version it was developed on. It also runs **both synthetic cases end to end**: since they
+generate their own data, no Kaggle download is needed, so what gets verified is the full
+pipeline and not just the pure functions.
 
 They cover the pure functions and, above all, **the error messages**: half the module's
 value is in failing early and with context, and that breaks as easily as a calculation.

@@ -385,9 +385,10 @@ fecha, y no para objetivos de supervivencia. El caso está completo y ejecutable
 python -m pytest -q          # 23 pruebas, ~1 s
 ```
 
-El CI las corre en Python 3.11 y 3.13 en cada push, y además ejecuta **los dos casos
-sintéticos de punta a punta**: como se generan solos, no hacen falta datos de Kaggle, así
-que lo que se verifica no son solo las funciones puras sino el pipeline completo.
+El CI las corre en cada push sobre Python 3.12 y 3.14, que son el piso real del proyecto y
+la versión en la que se desarrolló. Y además ejecuta **los dos casos sintéticos de punta a
+punta**: como se generan solos, no hacen falta datos de Kaggle, así que lo que se verifica
+no son solo las funciones puras sino el pipeline completo.
 
 Cubren las funciones puras y, sobre todo, **los mensajes de error**: la mitad del valor del
 módulo está en fallar temprano y con contexto, y eso se rompe con la misma facilidad que una
